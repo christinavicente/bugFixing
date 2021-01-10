@@ -91,14 +91,18 @@ public class Main {
     //iteratates through all expenses to see if the given value is in the arraylist
     private static void searchExpenses(ArrayList<Integer> arrayList, Integer value) {
         boolean foundResult=false;
+        int index=0;
         //searches for the given value
         for(int expense: arrayList) {
+
             if (expense == value) {
                 foundResult = true;
+                index=arrayList.indexOf(expense);
             }
         }//prints out the appropriate response based on the previous search
         if(foundResult){
-            System.out.println("The expense "  + value + " has been found");
+            System.out.println("The expense "  + value + " has been found " +
+                    "at index: "+ index);
         }else{
             System.out.println("The expense " + value +" cannot be found" );
         }
